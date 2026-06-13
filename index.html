@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلة حديقة الحيوان | كتاب طفلك المخصص</title>
+    <title>رحلة حديقة الحيوان | كتاب طفلك المخصص الفاخر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* إعدادات الألوان والخطوط الأساسية */
+        /* إعدادات الألوان الغامقة والفخمة (Dark Premium Palette) */
         :root {
-            --primary-color: #FF9800; /* برتقالي جذاب */
-            --secondary-color: #4CAF50; /* أخضر طبيعي */
-            --bg-color: #F9FBE7; /* خلفية هادئة */
-            --text-color: #333;
+            --bg-color: #121212; /* أسود غامق جدًا */
+            --card-bg: #1E1E1E; /* خلفية البطاقات (أغمق قليلاً) */
+            --primary-color: #DAA520; /* ذهبي غامق/معدني فخم */
+            --secondary-color: #4169E1; /* أزرق ملكي عميق */
+            --text-color: #E0E0E0; /* أبيض مائل للرمادي فاتح */
+            --border-color: #333333; /* حدود داكنة */
+            --input-bg: #2C2C2C; /* خلفية حقول الإدخال */
         }
 
         body {
@@ -24,55 +28,139 @@
             align-items: center;
         }
 
-        /* تصميم الرأس (الهيدر) */
+        /* تصميم الرأس (الهيدر) الغامق */
         header {
-            background-color: var(--secondary-color);
+            background-color: var(--card-bg);
             color: white;
             width: 100%;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--primary-color);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 3rem;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
         }
+
+        header h1 span { color: var(--primary-color); } /* تلوين كلمة حديقة بالذهبي */
 
         header p {
-            margin: 10px 0 0 0;
-            font-size: 1.2rem;
-            opacity: 0.9;
+            margin: 15px 0 0 0;
+            font-size: 1.3rem;
+            opacity: 0.8;
+            font-weight: 300;
         }
 
-        /* تصميم الحاوية الرئيسية */
-        .container {
-            max-width: 550px;
+        /* تصميم الحاوية الرئيسية المحسنة */
+        .main-content {
             width: 90%;
-            background: white;
-            margin: -20px auto 40px auto; /* تداخل جميل مع الهيدر */
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border: 3px dashed var(--primary-color);
+            max-width: 900px; /* تمديد العرض ليشمل العناصر الجديدة */
+            margin: -30px auto 50px auto;
             position: relative;
             z-index: 10;
         }
 
-        /* قسم المميزات التسويقية */
-        .features {
-            background: #FFF3E0;
-            padding: 20px;
+        /* قسم الفيديو الترويجي (Placeholder) */
+        .video-placeholder {
+            width: 100%;
+            background-color: #080808;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 2px solid var(--secondary-color);
+            text-align: center;
+        }
+        
+        .video-placeholder img {
+            max-width: 100%;
+            height: auto;
             border-radius: 12px;
-            margin-bottom: 30px;
-            border-right: 5px solid var(--primary-color);
+            opacity: 0.7;
+        }
+        
+        .video-placeholder p { margin-top: 15px; color: #777; }
+
+        /* قسم النص التسويقي للأم */
+        .marketing-copy {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        .marketing-copy h2 { font-size: 2.2rem; color: #fff; margin-bottom: 15px; }
+        .marketing-copy h2 span { color: var(--primary-color); }
+        .marketing-copy p { font-size: 1.2rem; line-height: 1.7; opacity: 0.9; }
+
+        /* قسم نماذج من كتبنا (Placeholder Gallery) */
+        .book-gallery {
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+        }
+        
+        .book-gallery h3 { text-align: center; font-size: 1.8rem; margin-bottom: 25px; color: #fff; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .gallery-item { background-color: var(--input-bg); border-radius: 10px; padding: 10px; text-align: center; border: 1px solid #444; }
+        .gallery-item img { max-width: 100%; border-radius: 8px; opacity: 0.6; } /* placeholder opacity */
+        .gallery-item p { margin-top: 10px; font-size: 0.9rem; color: #888; }
+
+        /* قسم ميزات الكتاب بقائمة أيقونية محسنة */
+        .features-premium {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            border-left: 6px solid var(--primary-color);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        .features h3 { margin: 0 0 10px 0; color: #E65100; font-size: 1.2rem; }
-        .features ul { padding-right: 20px; margin: 0; font-size: 1rem; line-height: 1.6; }
+        .features-premium h3 { margin: 0 0 20px 0; color: #fff; font-size: 1.6rem; text-align: center; }
+        .features-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .features-list li { display: flex; align-items: center; font-size: 1.1rem; line-height: 1.5; color: rgba(255,255,255,0.9); }
+        .features-list li i { color: var(--primary-color); font-size: 1.3rem; margin-left: 15px; width: 20px; text-align: center; }
 
-        /* تصميم الحقول (الفورم) */
+        /* قسم ملاحظة الإنتاج */
+        .production-note { text-align: center; margin-bottom: 40px; font-size: 1rem; color: #888; padding: 0 30px; }
+
+        /* قسم آراء الأمهات (Placeholder Reviews) */
+        .reviews-section {
+            width: 100%;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+        }
+        
+        .reviews-section h3 { text-align: center; font-size: 1.8rem; margin-bottom: 25px; color: #fff; }
+        .review-card { background-color: var(--input-bg); border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid #444; }
+        .review-card p { margin: 0 0 10px 0; font-size: 1rem; font-style: italic; opacity: 0.8; }
+        .review-card .reviewer { font-weight: bold; color: var(--primary-color); font-size: 0.9rem; }
+
+        /* تصميم بطاقة النموذج المطورة (Form Card) */
+        .form-card {
+            background-color: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border: 3px dashed var(--secondary-color);
+            border-radius: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-card h3 { text-align: center; font-size: 1.8rem; margin-bottom: 30px; color: #fff; letter-spacing: 1px; }
+
         .form-group {
             margin-bottom: 25px;
         }
@@ -82,53 +170,89 @@
             margin-bottom: 10px;
             font-weight: bold;
             font-size: 1.1rem;
-            color: #424242;
+            color: #ccc;
         }
 
-        input[type="text"], input[type="number"], input[type="file"] {
+        input[type="text"], select, input[type="file"] {
             width: 100%;
             padding: 15px;
-            border: 2px solid #E0E0E0;
-            border-radius: 10px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
             font-size: 1rem;
             box-sizing: border-box;
-            transition: border-color 0.3s ease;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        select { /* تحسين مظهر القائمة المنسدلة */
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
         }
 
-        input[type="text"]:focus, input[type="number"]:focus {
+        input[type="text"]:focus, select:focus {
             border-color: var(--primary-color);
             outline: none;
+            box-shadow: 0 0 10px rgba(218, 165, 32, 0.2);
         }
 
-        /* تصميم الزر */
-        button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 18px 20px;
-            width: 100%;
-            font-size: 1.3rem;
-            font-weight: bold;
+        /* تصميم قسم رفع الصورة المطورة (File Upload Wrapper) */
+        .file-upload-wrapper {
+            position: relative;
+            border: 2px solid var(--border-color);
             border-radius: 12px;
+            padding: 20px;
+            background-color: var(--input-bg);
+            text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
         }
+        
+        .file-upload-wrapper:hover { border-color: var(--primary-color); background-color: #333; }
+        
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            left: 0; top: 0; width: 100%; height: 100%;
+            opacity: 0; cursor: pointer;
+        }
+        
+        .upload-icon { font-size: 2rem; color: #666; margin-bottom: 10px; }
+        .upload-text { font-size: 1rem; color: #aaa; }
+        .upload-filename { font-size: 0.9rem; color: var(--primary-color); margin-top: 5px; display: none; }
+
+        /* تصميم الزر المطور بتدرج لوني (Gradient Button) */
+        button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* تدرج فخم من الذهبي للأزرق */
+            color: white;
+            border: none;
+            padding: 20px 25px;
+            width: 100%;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            display: flex; align-items: center; justify-content: center; /* توسيط الأيقونة */
+        }
+        
+        button i { margin-left: 10px; font-size: 1.4rem; } /* مسافة الأيقونة */
 
         button:hover {
-            background-color: #F57C00;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)); /* عكس التدرج عند الحوم */
         }
 
         button:disabled {
-            background-color: #BDBDBD;
+            background: #555;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
 
-        /* رسائل النجاح والخطأ */
+        /* رسائل النجاح والخطأ المطورة */
         #message {
             margin-top: 25px;
             text-align: center;
@@ -137,67 +261,141 @@
             padding: 15px;
             border-radius: 10px;
             font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-        .success { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
-        .error { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
+        .success { background-color: rgba(46, 125, 50, 0.2); color: #C8E6C9; border: 1px solid #2E7D32; }
+        .error { background-color: rgba(198, 40, 40, 0.2); color: #FFCDD2; border: 1px solid #C62828; }
+        
+        /* تذييل الصفحة (Footer) */
+        footer { margin-top: 50px; padding: 30px; text-align: center; font-size: 0.9rem; color: #666; border-top: 1px solid var(--border-color); width: 100%; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🦁 رحلة حديقة الحيوان 🦒</h1>
+        <h1>🦁 رحلة <span>حديقة</span> الحيوان 🦒</h1>
         <p>مغامرة تعليمية مذهلة بطلها طفلك!</p>
     </header>
 
-    <div class="container">
+    <div class="main-content">
         
-        <div class="features">
-            <h3>✨ ماذا ستحصل؟</h3>
-            <ul>
-                <li>قصة تفاعلية باسم وصورة طفلك الحقيقية.</li>
-                <li>تعلم الأرقام والحروف بطريقة ممتعة.</li>
-                <li>نسخة ملونة للطباعة + نسخة للتلوين مجاناً.</li>
+        <div class="video-placeholder">
+            <img src="https://via.placeholder.com/600x338?text=فيديو ترويجي مذهل (قريباً)" alt="فيديو ترويجي">
+            <p>شاهد كيف سيصبح طفلك بطلاً لقصته!</p>
+        </div>
+
+        <div class="marketing-copy">
+            <h2>طفلك يصبح <span>بطل قصته</span> الخاصة ✨</h2>
+            <p>حلم كل أم... كتاب فاخر لطفلك باسمه وصورته في قصة مؤثرة تحتفظون بها للأبد!</p>
+        </div>
+
+        <div class="book-gallery">
+            <h3>نمـاذج من كتبنا 📸</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://via.placeholder.com/150x200?text=غلاف مخصص" alt="غلاف"><p>غلاف الكتاب المخصص</p></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/150x112?text=صفحة داخلية" alt="صفحة 1"><p>الصفحة الأولى (الأرقام)</p></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/150x112?text=صفحة داخلية" alt="صفحة 2"><p>الصفحة الثانية (الحروف)</p></div>
+            </div>
+        </div>
+
+        <div class="features-premium">
+            <h3>ميزات الكتاب السحري 📚</h3>
+            <ul class="features-list">
+                <li><i class="fas fa-face-smile"></i>قصة تفاعلية باسم وصورة طفلك الحقيقية.</li>
+                <li><i class="fas fa-graduation-cap"></i>تعلم الأرقام والحروف بطريقة ممتعة.</li>
+                <li><i class="fas fa-print"></i>نسخة ملونة للطباعة + نسخة للتلوين مجاناً.</li>
+                <li><i class="fas fa-file-pdf"></i>ملفات PDF عالية الدقة (300 DPI) جاهزة للطباعة.</li>
             </ul>
         </div>
 
-        <form id="orderForm">
-            <div class="form-group">
-                <label for="childName">اسم الطفل (الأول فقط):</label>
-                <input type="text" id="childName" placeholder="مثال: خالد" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="childAge">عمر الطفل:</label>
-                <input type="number" id="childAge" min="2" max="10" placeholder="مثال: 5" required>
-            </div>
+        <div class="production-note">
+            *نستقبل عدداً محدوداً من الطلبات يومياً لضمان الجودة والتسليم السريع بصيغة PDF.*
+        </div>
 
-            <div class="form-group">
-                <label for="childPhoto">صورة الطفل (صورة واضحة للوجه للإضاءة الجيدة):</label>
-                <input type="file" id="childPhoto" accept="image/png, image/jpeg, image/jpg" required>
+        <div class="reviews-section">
+            <h3>آراء الأمهات 🥰</h3>
+            <div class="review-card">
+                <p>"ابني انبسط جداً ورأى نفسه بين الحيوانات! تجربة رائعة."</p>
+                <p class="reviewer">- أم أحمد</p>
             </div>
+            <div class="review-card">
+                <p>"أفضل هدية قدمتها لطفلتي، لم تترك الكتاب قط! شكراً جزيلاً."</p>
+                <p class="reviewer">- سارة م.</p>
+            </div>
+        </div>
 
-            <button type="submit" id="submitBtn">🚀 اصنع كتاب طفلي الآن!</button>
-        </form>
+        <div class="form-card">
+            <h3>طلب كتاب طفلك الشخصي ✨</h3>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="childName">اسم الطفل (الأول فقط):</label>
+                    <input type="text" id="childName" placeholder="مثال: أحمد" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="childAge">عمر الطفل:</label>
+                    <select id="childAge" required>
+                        <option value="" disabled selected>اختر العمر</option>
+                        <option value="2">2 سنوات</option>
+                        <option value="3">3 سنوات</option>
+                        <option value="4">4 سنوات</option>
+                        <option value="5">5 سنوات</option>
+                        <option value="6">6 سنوات</option>
+                        <option value="7">7 سنوات</option>
+                        <option value="8">8 سنوات</option>
+                        <option value="9">9 سنوات</option>
+                        <option value="10">10 سنوات</option>
+                    </select>
+                </div>
 
-        <div id="message"></div>
+                <div class="form-group">
+                    <label>ارفع صورة طفلك (صورة واضحة للوجه للإضاءة الجيدة):</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="childPhoto" accept="image/png, image/jpeg, image/jpg" required>
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <div class="upload-text">اضغط هنا لرفع صورة طفلك المفضلة 📸</div>
+                        <div class="upload-filename" id="uploadFilename"></div>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn"><span>اصنع كتاب طفلك</span> <i class="fas fa-gift"></i></button>
+            </form>
+            <div id="message"></div>
+        </div>
     </div>
+    
+    <footer>
+        صناعة كتب الأطفال الفاخرة بتقنيات حديثة | Saf © 2026 | جميع الحقوق محفوظة
+    </footer>
 
     <script>
-        // ⚠️ هنا سنضع رابط Webhook الخاص بـ n8n لاحقاً
+        // ⚠️ ملاحظة هامة: يجب استبدال الرابط التالي برابط Webhook من n8n لاحقاً ليعمل الموقع
         const N8N_WEBHOOK_URL = 'https://YOUR_N8N_WEBHOOK_URL_HERE';
+
+        // سكربت لعرض اسم الملف المرفوع
+        document.getElementById('childPhoto').addEventListener('change', function() {
+            const filenameDiv = document.getElementById('uploadFilename');
+            if(this.files && this.files.length > 0) {
+                filenameDiv.innerText = `الفائل: ${this.files[0].name}`;
+                filenameDiv.style.display = 'block';
+            } else {
+                filenameDiv.style.display = 'none';
+            }
+        });
 
         document.getElementById('orderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const name = document.getElementById('childName').value;
-            const age = document.getElementById('childAge').value;
+            const ageSelect = document.getElementById('childAge');
+            const age = ageSelect.options[ageSelect.selectedIndex].text; // الحصول على نص العمر (مثال: 5 سنوات)
             const photoInput = document.getElementById('childPhoto').files[0];
             const submitBtn = document.getElementById('submitBtn');
             const messageDiv = document.getElementById('message');
 
             // تغيير حالة الزر أثناء المعالجة
             submitBtn.disabled = true;
-            submitBtn.innerText = '⏳ جاري إرسال الطلب للمعالجة...';
+            submitBtn.querySelector('span').innerText = '⏳ جاري إرسال الطلب...';
             messageDiv.style.display = 'none';
 
             const reader = new FileReader();
@@ -208,7 +406,7 @@
                 const payload = {
                     child_name: name,
                     child_age: age,
-                    child_photo_base64: reader.result,
+                    child_photo_base64: reader.result, // الصورة كـ Base64
                     order_date: new Date().toISOString()
                 };
 
@@ -216,9 +414,7 @@
                     // إرسال البيانات إلى سيرفر n8n
                     const response = await fetch(N8N_WEBHOOK_URL, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
 
@@ -227,18 +423,19 @@
                         messageDiv.className = 'success';
                         messageDiv.style.display = 'block';
                         document.getElementById('orderForm').reset();
+                        document.getElementById('uploadFilename').style.display = 'none'; // إعادة تعيين اسم الملف
                     } else {
                         throw new Error('فشل الاتصال بالخادم');
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    messageDiv.innerText = '❌ عذراً، لم نتمكن من إرسال الطلب. يرجى المحاولة لاحقاً.';
+                    messageDiv.innerText = '❌ عذراً، لم نتمكن من إرسال الطلب. تأكد من إعدادات n8n.';
                     messageDiv.className = 'error';
                     messageDiv.style.display = 'block';
                 } finally {
                     // إعادة الزر لحالته الطبيعية
                     submitBtn.disabled = false;
-                    submitBtn.innerText = '🚀 اصنع كتاب طفلي الآن!';
+                    submitBtn.querySelector('span').innerText = 'اصنع كتاب طفلك';
                 }
             };
 
@@ -247,7 +444,7 @@
                 messageDiv.className = 'error';
                 messageDiv.style.display = 'block';
                 submitBtn.disabled = false;
-                submitBtn.innerText = '🚀 اصنع كتاب طفلي الآن!';
+                submitBtn.querySelector('span').innerText = 'اصنع كتاب طفلك';
             };
         });
     </script>
