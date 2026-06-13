@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة حديقة الحيوان | كتاب طفلك المخصص</title>
+    <style>
+        /* إعدادات الألوان والخطوط الأساسية */
+        :root {
+            --primary-color: #FF9800; /* برتقالي جذاب */
+            --secondary-color: #4CAF50; /* أخضر طبيعي */
+            --bg-color: #F9FBE7; /* خلفية هادئة */
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* تصميم الرأس (الهيدر) */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* تصميم الحاوية الرئيسية */
+        .container {
+            max-width: 550px;
+            width: 90%;
+            background: white;
+            margin: -20px auto 40px auto; /* تداخل جميل مع الهيدر */
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border: 3px dashed var(--primary-color);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* قسم المميزات التسويقية */
+        .features {
+            background: #FFF3E0;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .features h3 { margin: 0 0 10px 0; color: #E65100; font-size: 1.2rem; }
+        .features ul { padding-right: 20px; margin: 0; font-size: 1rem; line-height: 1.6; }
+
+        /* تصميم الحقول (الفورم) */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #424242;
+        }
+
+        input[type="text"], input[type="number"], input[type="file"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        /* تصميم الزر */
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 18px 20px;
+            width: 100%;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(255, 152, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #F57C00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.4);
+        }
+
+        button:disabled {
+            background-color: #BDBDBD;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* رسائل النجاح والخطأ */
+        #message {
+            margin-top: 25px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        .success { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
+        .error { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🦁 رحلة حديقة الحيوان 🦒</h1>
+        <p>مغامرة تعليمية مذهلة بطلها طفلك!</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="features">
+            <h3>✨ ماذا ستحصل؟</h3>
+            <ul>
+                <li>قصة تفاعلية باسم وصورة طفلك الحقيقية.</li>
+                <li>تعلم الأرقام والحروف بطريقة ممتعة.</li>
+                <li>نسخة ملونة للطباعة + نسخة للتلوين مجاناً.</li>
+            </ul>
+        </div>
+
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="childName">اسم الطفل (الأول فقط):</label>
+                <input type="text" id="childName" placeholder="مثال: خالد" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="childAge">عمر الطفل:</label>
+                <input type="number" id="childAge" min="2" max="10" placeholder="مثال: 5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="childPhoto">صورة الطفل (صورة واضحة للوجه للإضاءة الجيدة):</label>
+                <input type="file" id="childPhoto" accept="image/png, image/jpeg, image/jpg" required>
+            </div>
+
+            <button type="submit" id="submitBtn">🚀 اصنع كتاب طفلي الآن!</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        // ⚠️ هنا سنضع رابط Webhook الخاص بـ n8n لاحقاً
+        const N8N_WEBHOOK_URL = 'https://YOUR_N8N_WEBHOOK_URL_HERE';
+
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('childName').value;
+            const age = document.getElementById('childAge').value;
+            const photoInput = document.getElementById('childPhoto').files[0];
+            const submitBtn = document.getElementById('submitBtn');
+            const messageDiv = document.getElementById('message');
+
+            // تغيير حالة الزر أثناء المعالجة
+            submitBtn.disabled = true;
+            submitBtn.innerText = '⏳ جاري إرسال الطلب للمعالجة...';
+            messageDiv.style.display = 'none';
+
+            const reader = new FileReader();
+            reader.readAsDataURL(photoInput);
+            
+            reader.onload = async function () {
+                // تجهيز البيانات للإرسال
+                const payload = {
+                    child_name: name,
+                    child_age: age,
+                    child_photo_base64: reader.result,
+                    order_date: new Date().toISOString()
+                };
+
+                try {
+                    // إرسال البيانات إلى سيرفر n8n
+                    const response = await fetch(N8N_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        messageDiv.innerHTML = '✅ تم استلام بيانات البطل <strong>' + name + '</strong> بنجاح! جاري تحضير الكتاب السحري.';
+                        messageDiv.className = 'success';
+                        messageDiv.style.display = 'block';
+                        document.getElementById('orderForm').reset();
+                    } else {
+                        throw new Error('فشل الاتصال بالخادم');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    messageDiv.innerText = '❌ عذراً، لم نتمكن من إرسال الطلب. يرجى المحاولة لاحقاً.';
+                    messageDiv.className = 'error';
+                    messageDiv.style.display = 'block';
+                } finally {
+                    // إعادة الزر لحالته الطبيعية
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = '🚀 اصنع كتاب طفلي الآن!';
+                }
+            };
+
+            reader.onerror = function () {
+                messageDiv.innerText = '❌ حدث خطأ أثناء قراءة الصورة.';
+                messageDiv.className = 'error';
+                messageDiv.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.innerText = '🚀 اصنع كتاب طفلي الآن!';
+            };
+        });
+    </script>
+</body>
+</html>
